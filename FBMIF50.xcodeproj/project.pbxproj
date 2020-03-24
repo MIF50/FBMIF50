@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		302CFB1A242A7D7B0058A503 /* StoriesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302CFB19242A7D7B0058A503 /* StoriesController.swift */; };
 		309DB3FF242718AE00CD75AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309DB3FE242718AE00CD75AA /* AppDelegate.swift */; };
 		309DB401242718AE00CD75AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309DB400242718AE00CD75AA /* SceneDelegate.swift */; };
 		309DB403242718AE00CD75AA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309DB402242718AE00CD75AA /* ViewController.swift */; };
@@ -16,9 +17,11 @@
 		309DB4132427196000CD75AA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309DB4122427196000CD75AA /* ContentView.swift */; };
 		309DB415242719AF00CD75AA /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309DB414242719AF00CD75AA /* MainController.swift */; };
 		309DB41824271E4800CD75AA /* LBTATools in Frameworks */ = {isa = PBXBuildFile; productRef = 309DB41724271E4800CD75AA /* LBTATools */; };
+		309DB41A2427282100CD75AA /* PhotosGridController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309DB4192427282100CD75AA /* PhotosGridController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		302CFB19242A7D7B0058A503 /* StoriesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesController.swift; sourceTree = "<group>"; };
 		309DB3FB242718AE00CD75AA /* FBMIF50.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FBMIF50.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		309DB3FE242718AE00CD75AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		309DB400242718AE00CD75AA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -29,6 +32,7 @@
 		309DB40C242718B000CD75AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		309DB4122427196000CD75AA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		309DB414242719AF00CD75AA /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		309DB4192427282100CD75AA /* PhotosGridController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosGridController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +47,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		302CFB18242A79E10058A503 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				309DB4192427282100CD75AA /* PhotosGridController.swift */,
+				309DB414242719AF00CD75AA /* MainController.swift */,
+				302CFB19242A7D7B0058A503 /* StoriesController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		309DB3F2242718AE00CD75AA = {
 			isa = PBXGroup;
 			children = (
@@ -62,6 +76,7 @@
 		309DB3FD242718AE00CD75AA /* FBMIF50 */ = {
 			isa = PBXGroup;
 			children = (
+				302CFB18242A79E10058A503 /* Controller */,
 				309DB3FE242718AE00CD75AA /* AppDelegate.swift */,
 				309DB400242718AE00CD75AA /* SceneDelegate.swift */,
 				309DB402242718AE00CD75AA /* ViewController.swift */,
@@ -70,7 +85,6 @@
 				309DB409242718B000CD75AA /* LaunchScreen.storyboard */,
 				309DB40C242718B000CD75AA /* Info.plist */,
 				309DB4122427196000CD75AA /* ContentView.swift */,
-				309DB414242719AF00CD75AA /* MainController.swift */,
 			);
 			path = FBMIF50;
 			sourceTree = "<group>";
@@ -152,6 +166,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				302CFB1A242A7D7B0058A503 /* StoriesController.swift in Sources */,
+				309DB41A2427282100CD75AA /* PhotosGridController.swift in Sources */,
 				309DB403242718AE00CD75AA /* ViewController.swift in Sources */,
 				309DB3FF242718AE00CD75AA /* AppDelegate.swift in Sources */,
 				309DB4132427196000CD75AA /* ContentView.swift in Sources */,
