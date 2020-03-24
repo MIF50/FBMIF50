@@ -60,6 +60,7 @@ class MainController: LBTAListHeaderController<PostCell,String,StoryHeader> {
         super.viewDidLoad()
         
         initCollectionView()
+        setupNavBar()
         
     }
     
@@ -68,7 +69,23 @@ class MainController: LBTAListHeaderController<PostCell,String,StoryHeader> {
         self.items = ["hello", "wolrd","1","2"]
 
     }
+    
+    let fbLogo: UIImageView = {
+        let img = UIImageView(image: UIImage(named: "fb_logo"), contentMode: .scaleAspectFit)
+        img.withWidth(120)
+        return img
+    }()
+    
+    fileprivate func setupNavBar() {
+        let width = view.frame.width - 120 - 16
+        let navView = UIView(backgroundColor: .red)
+        navView.frame = .init(x: 0, y: 0, width: width, height: 50)
+        navView.hstack(fbLogo,UIView(backgroundColor: .yellow).withWidth(width))
+        navigationItem.titleView = navView
+    }
 }
+
+
 
 //MARK:- Collection View Delegate Flow Layout
 extension MainController: UICollectionViewDelegateFlowLayout {
@@ -91,11 +108,6 @@ extension MainController: UICollectionViewDelegateFlowLayout {
 
 
 
-
-
-
-
-
 // to preview desing form SwiftUI
 struct MainPreview: PreviewProvider{
 
@@ -105,7 +117,7 @@ struct MainPreview: PreviewProvider{
     
     struct ContainerView: UIViewControllerRepresentable {
         func makeUIViewController(context: UIViewControllerRepresentableContext<MainPreview.ContainerView>) -> UIViewController {
-            return MainController()
+            return UINavigationController(rootViewController: MainController())
         }
         
         func updateUIViewController(_ uiViewController: MainPreview.ContainerView.UIViewControllerType, context: UIViewControllerRepresentableContext<MainPreview.ContainerView>) {
