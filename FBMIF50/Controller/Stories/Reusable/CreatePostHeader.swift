@@ -23,50 +23,114 @@ class CreatePostHeader: UICollectionReusableView {
        let textField = UITextField(placeholder: "what's on your mind?")
         return textField
     }()
+        
     
-    let liveBtn: UIButton = {
+    let liveStack: UIStackView = {
+        
+        let img = UIImageView(image: UIImage(named: "broadcast"), contentMode: .scaleAspectFit)
+        img.withSize(.init(width: 25, height: 25))
+        
         let btn = UIButton(title: "Live", titleColor: .black)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         btn.titleLabel?.textAlignment = .center
-//        btn.setImage(UIImage(named: "broadcast")!, for: .normal)
-//        btn.imageView?.contentMode = .scaleAspectFit
-//        btn.alignVertical()
         
-        btn.backgroundColor = .yellow
-
-
-        return btn
+        let stack = UIStackView(arrangedSubviews: [UIView(),img,btn,UIView().withWidth(25)])
+        stack.spacing = 4
+        stack.alignment = .center
+        stack.backgroundColor = .yellow
+        return stack
     }()
     
-    let photoBtn: UIButton = {
-        let btn = UIButton(title: "Photo", titleColor: .black)
+    
+    let photoStack: UIStackView = {
+        
+        let img = UIImageView(image: UIImage(named: "photo"), contentMode: .scaleAspectFit)
+        img.withSize(.init(width: 25, height: 25))
+        
+        let btn = UIButton(title: "photo", titleColor: .black)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         btn.titleLabel?.textAlignment = .center
-
-//        btn.setImage(UIImage(named: "photo")!, for: .normal)
-//        btn.imageView?.contentMode = .scaleAspectFit
-//        btn.alignVertical()
         
-        btn.backgroundColor = .blue
-
-        return btn
+        let stack = UIStackView(arrangedSubviews: [UIView().withWidth(15),img,btn,UIView().withWidth(34)])
+        stack.spacing = 0
+        stack.alignment = .center
+        stack.backgroundColor = .purple
+        return stack
     }()
     
-    let checkInBtn: UIButton = {
-        let btn = UIButton(title: "check In", titleColor: .black)
+    let checkInStack: UIStackView = {
+        
+        let checkInImg = UIImageView(image: UIImage(named: "check_in"), contentMode: .scaleAspectFit)
+        checkInImg.withSize(.init(width: 25, height: 25))
+        
+        let btn = UIButton(title: "Check In", titleColor: .black)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         btn.titleLabel?.textAlignment = .center
-
-//        btn.setImage(UIImage(named: "check_in")!, for: .normal)
-//        btn.imageView?.contentMode = .scaleAspectFit
-//        btn.alignVertical()
         
-        let widthTitle = btn.titleLabel?.frame.width
-        print("widthTitle = \(widthTitle)")
+        let stack = UIStackView(arrangedSubviews: [checkInImg,btn,UIView()])
+        stack.spacing = 4
+        stack.alignment = .center
+        stack.backgroundColor = .red
+        return stack
+    }()
+    ///////===========
+    let liveContainer: UIView = {
         
-        btn.backgroundColor = .purple
+        let img = UIImageView(image: UIImage(named: "broadcast"), contentMode: .scaleAspectFit)
+        img.withSize(.init(width: 25, height: 25))
+        
+        let btn = UIButton(title: "Live", titleColor: .black)
+        btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        btn.titleLabel?.textAlignment = .center
+        
+        let container = UIView()
+        container.addSubview(img)
+        img.anchor(top: container.topAnchor, leading: container.leadingAnchor, bottom: container.bottomAnchor, trailing: nil,padding: .init(top: 0, left: 24, bottom: 0, right: 0))
+        container.addSubview(btn)
+        btn.anchor(top: container.topAnchor, leading: img.trailingAnchor, bottom: container.bottomAnchor, trailing: container.trailingAnchor,padding: .init(top: 0, left: 0, bottom: 0, right: 24))
+        container.backgroundColor = .yellow
 
-        return btn
+        return container
+    }()
+    
+    
+    let photoContainer: UIView = {
+        
+        let img = UIImageView(image: UIImage(named: "photo"), contentMode: .scaleAspectFit)
+        img.withSize(.init(width: 25, height: 25))
+        
+        let btn = UIButton(title: "photo", titleColor: .black)
+        btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        btn.titleLabel?.textAlignment = .center
+        
+       let container = UIView()
+        container.addSubview(img)
+        img.anchor(top: container.topAnchor, leading: container.leadingAnchor, bottom: container.bottomAnchor, trailing: nil,padding: .init(top: 0, left: 24, bottom: 0, right: 0))
+        container.addSubview(btn)
+        btn.anchor(top: container.topAnchor, leading: img.trailingAnchor, bottom: container.bottomAnchor, trailing: container.trailingAnchor,padding: .init(top: 0, left: 24, bottom: 0, right: 24))
+        container.backgroundColor = .red
+        return container
+    }()
+    
+    let checkInContainer: UIView = {
+        
+        let img = UIImageView(image: UIImage(named: "check_in"), contentMode: .scaleAspectFit)
+        img.withSize(.init(width: 25, height: 25))
+        
+        let btn = UIButton(title: "Check In", titleColor: .black)
+        btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        btn.titleLabel?.textAlignment = .center
+        
+       let container = UIView()
+        container.addSubview(img)
+        img.anchor(top: container.topAnchor, leading: container.leadingAnchor, bottom: container.bottomAnchor, trailing: nil,padding: .init(top: 0, left: 24, bottom: 0, right: 0))
+        container.addSubview(btn)
+        btn.anchor(top: container.topAnchor, leading: img.trailingAnchor, bottom: container.bottomAnchor, trailing: container.trailingAnchor,padding: .init(top: 0, left: 0, bottom: 0, right: 24))
+        container.backgroundColor = .blue
+        
+        container.withWidth(100)
+
+        return container
     }()
     
     
@@ -80,9 +144,12 @@ class CreatePostHeader: UICollectionReusableView {
         arrangeLayout()
     }
     
+    
+    
     private func arrangeLayout() {
         let topStack = hstack(UIView(backgroundColor: .clear).withWidth(16),userImageView, textFieldPost,spacing: 8)
-        let bottomStack = hstack(liveBtn, photoBtn, checkInBtn).withMargins(.init(top: 0, left: 0, bottom: 0, right: 0))
+        let bottomStack = hstack(liveStack, photoStack, checkInStack)
+//        let bottomStack = hstack(liveContainer, photoContainer , checkInContainer)
         bottomStack.distribution = .fillEqually
         stack(UIView().withHeight(12),topStack,bottomStack)
     }
