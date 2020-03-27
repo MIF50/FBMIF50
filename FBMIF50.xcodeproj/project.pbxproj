@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30189CBB242D0163002A14EA /* PhotoGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30189CBA242D0163002A14EA /* PhotoGridCell.swift */; };
+		30189CBD242D01AE002A14EA /* StoryPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30189CBC242D01AE002A14EA /* StoryPhotoCell.swift */; };
+		30189CBF242D01F1002A14EA /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30189CBE242D01F1002A14EA /* PostCell.swift */; };
+		30189CC1242D0218002A14EA /* StoryHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30189CC0242D0218002A14EA /* StoryHeader.swift */; };
+		30189CC5242D05BD002A14EA /* CreatePostHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30189CC4242D05BD002A14EA /* CreatePostHeader.swift */; };
+		30189CC7242D2AE1002A14EA /* PostStoryCollroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30189CC6242D2AE1002A14EA /* PostStoryCollroller.swift */; };
+		30189CC9242D3031002A14EA /* StoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30189CC8242D3031002A14EA /* StoryCell.swift */; };
+		30189CCC242D4BAE002A14EA /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30189CCB242D4BAE002A14EA /* UIButton+Extension.swift */; };
 		302CFB1A242A7D7B0058A503 /* StoriesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302CFB19242A7D7B0058A503 /* StoriesController.swift */; };
 		309DB3FF242718AE00CD75AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309DB3FE242718AE00CD75AA /* AppDelegate.swift */; };
 		309DB401242718AE00CD75AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309DB400242718AE00CD75AA /* SceneDelegate.swift */; };
@@ -21,6 +29,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		30189CBA242D0163002A14EA /* PhotoGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridCell.swift; sourceTree = "<group>"; };
+		30189CBC242D01AE002A14EA /* StoryPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryPhotoCell.swift; sourceTree = "<group>"; };
+		30189CBE242D01F1002A14EA /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		30189CC0242D0218002A14EA /* StoryHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryHeader.swift; sourceTree = "<group>"; };
+		30189CC4242D05BD002A14EA /* CreatePostHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostHeader.swift; sourceTree = "<group>"; };
+		30189CC6242D2AE1002A14EA /* PostStoryCollroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostStoryCollroller.swift; sourceTree = "<group>"; };
+		30189CC8242D3031002A14EA /* StoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCell.swift; sourceTree = "<group>"; };
+		30189CCB242D4BAE002A14EA /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		302CFB19242A7D7B0058A503 /* StoriesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesController.swift; sourceTree = "<group>"; };
 		309DB3FB242718AE00CD75AA /* FBMIF50.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FBMIF50.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		309DB3FE242718AE00CD75AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,12 +63,75 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		30189CB4242CFDCA002A14EA /* Photos */ = {
+			isa = PBXGroup;
+			children = (
+				30189CB9242CFE33002A14EA /* Reusable */,
+				309DB4192427282100CD75AA /* PhotosGridController.swift */,
+			);
+			path = Photos;
+			sourceTree = "<group>";
+		};
+		30189CB5242CFDDF002A14EA /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				30189CB8242CFE29002A14EA /* Reusable */,
+				309DB414242719AF00CD75AA /* MainController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		30189CB6242CFDEA002A14EA /* Stories */ = {
+			isa = PBXGroup;
+			children = (
+				30189CB7242CFE11002A14EA /* Reusable */,
+				302CFB19242A7D7B0058A503 /* StoriesController.swift */,
+				30189CC6242D2AE1002A14EA /* PostStoryCollroller.swift */,
+			);
+			path = Stories;
+			sourceTree = "<group>";
+		};
+		30189CB7242CFE11002A14EA /* Reusable */ = {
+			isa = PBXGroup;
+			children = (
+				30189CBC242D01AE002A14EA /* StoryPhotoCell.swift */,
+				30189CC4242D05BD002A14EA /* CreatePostHeader.swift */,
+				30189CC8242D3031002A14EA /* StoryCell.swift */,
+			);
+			path = Reusable;
+			sourceTree = "<group>";
+		};
+		30189CB8242CFE29002A14EA /* Reusable */ = {
+			isa = PBXGroup;
+			children = (
+				30189CBE242D01F1002A14EA /* PostCell.swift */,
+				30189CC0242D0218002A14EA /* StoryHeader.swift */,
+			);
+			path = Reusable;
+			sourceTree = "<group>";
+		};
+		30189CB9242CFE33002A14EA /* Reusable */ = {
+			isa = PBXGroup;
+			children = (
+				30189CBA242D0163002A14EA /* PhotoGridCell.swift */,
+			);
+			path = Reusable;
+			sourceTree = "<group>";
+		};
+		30189CCA242D4B8F002A14EA /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				30189CCB242D4BAE002A14EA /* UIButton+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		302CFB18242A79E10058A503 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				309DB4192427282100CD75AA /* PhotosGridController.swift */,
-				309DB414242719AF00CD75AA /* MainController.swift */,
-				302CFB19242A7D7B0058A503 /* StoriesController.swift */,
+				30189CB6242CFDEA002A14EA /* Stories */,
+				30189CB5242CFDDF002A14EA /* Main */,
+				30189CB4242CFDCA002A14EA /* Photos */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -76,6 +155,7 @@
 		309DB3FD242718AE00CD75AA /* FBMIF50 */ = {
 			isa = PBXGroup;
 			children = (
+				30189CCA242D4B8F002A14EA /* Extension */,
 				302CFB18242A79E10058A503 /* Controller */,
 				309DB3FE242718AE00CD75AA /* AppDelegate.swift */,
 				309DB400242718AE00CD75AA /* SceneDelegate.swift */,
@@ -166,13 +246,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30189CC7242D2AE1002A14EA /* PostStoryCollroller.swift in Sources */,
+				30189CC5242D05BD002A14EA /* CreatePostHeader.swift in Sources */,
 				302CFB1A242A7D7B0058A503 /* StoriesController.swift in Sources */,
+				30189CC9242D3031002A14EA /* StoryCell.swift in Sources */,
 				309DB41A2427282100CD75AA /* PhotosGridController.swift in Sources */,
 				309DB403242718AE00CD75AA /* ViewController.swift in Sources */,
 				309DB3FF242718AE00CD75AA /* AppDelegate.swift in Sources */,
 				309DB4132427196000CD75AA /* ContentView.swift in Sources */,
+				30189CCC242D4BAE002A14EA /* UIButton+Extension.swift in Sources */,
 				309DB401242718AE00CD75AA /* SceneDelegate.swift in Sources */,
+				30189CBB242D0163002A14EA /* PhotoGridCell.swift in Sources */,
+				30189CC1242D0218002A14EA /* StoryHeader.swift in Sources */,
 				309DB415242719AF00CD75AA /* MainController.swift in Sources */,
+				30189CBD242D01AE002A14EA /* StoryPhotoCell.swift in Sources */,
+				30189CBF242D01F1002A14EA /* PostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

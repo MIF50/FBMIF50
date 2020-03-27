@@ -10,49 +10,12 @@ import UIKit
 import SwiftUI
 import LBTATools
 
-class StoryPhotoCell: LBTAListCell<String> {
-    
-    override var item: String! {
-        didSet {
-            imageView.image = UIImage(named: item)
-        }
-    }
-    
-    let imageView = UIImageView(image: nil, contentMode: .scaleAspectFill)
-    let nameLabel = UILabel(text: "Lee Ji Eun", font: .boldSystemFont(ofSize: 14), textColor: .white)
-    
-    override func setupViews() {
-        imageView.layer.cornerRadius = 8
-        
-        stack(imageView)
-        setupGradientLayout()
-        stack(UIView(),nameLabel).withMargins(.allSides(8))
-    }
-    
-    
-    let gradientLayout  = CAGradientLayer()
-    
-    fileprivate func setupGradientLayout(){
-        gradientLayout.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
-        gradientLayout.locations = [0.6,1.1]
-        gradientLayout.cornerRadius = 8
-        clipsToBounds = true
-        layer.addSublayer(gradientLayout)
-    }
-    
-    override func layoutSubviews() {
-        superview?.layoutSubviews()
-        
-        gradientLayout.frame = bounds
-    }
-}
 
 class StoriesController: LBTAListController<StoryPhotoCell,String> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        items = ["photo1","avatar1","avatar1","avatar1","avatar1","avatar1"]
+        items = ["photo1","avatar1","avatar1","avatar1","avatar1"]
     }
 }
 
@@ -60,13 +23,19 @@ class StoriesController: LBTAListController<StoryPhotoCell,String> {
 //MARK:- Collection View Delegate Flow Layout
 extension StoriesController: UICollectionViewDelegateFlowLayout {
     
+//     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+//         return .init(width: 0, height: 120)
+//       }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: 100, height: view.frame.height - 24 )
+        let height: CGFloat = 230
+        return .init(width: 120, height: height - 24 )
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return .init(top: 0, left: 12, bottom: 0, right: 12)
+        return .init(top: 12, left: 12, bottom: 0, right: 12)
     }
+
 }
 
 

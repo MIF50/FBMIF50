@@ -10,29 +10,11 @@ import UIKit
 import SwiftUI
 import LBTATools
 
-class PhotoGridCell: LBTAListCell<String> {
-    
-    override var item: String! {
-        didSet {
-            imageView.image = UIImage(named: item)
-        }
-    }
-    
-    let imageView: UIImageView = {
-        let img = UIImageView(image: UIImage(named: "avatar1"), contentMode: .scaleAspectFill)
-        return img
-    }()
-    
-    override func setupViews() {
-        backgroundColor = .yellow
-        stack(imageView)
-    }
-}
 
 class PhotosGridController: LBTAListController<PhotoGridCell,String> {
+    
     let cellSpacing: CGFloat = 4
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -87,7 +69,7 @@ extension PhotosGridController: UICollectionViewDelegateFlowLayout {
 struct PhotoPreview: PreviewProvider {
 
     static var previews: some View {
-        ContainerView().edgesIgnoringSafeArea(.all)
+        ContainerView().edgesIgnoringSafeArea(.all).previewLayout(.fixed(width: 400, height: 500))
     }
     
     struct ContainerView: UIViewControllerRepresentable {
